@@ -39,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
 //        simpleArcLoader = findViewById(R.id.simpleArcLoader);
 
 
-        tvCases.setText(AffectedCountries.countriesList.get(position).getCountryName());
+        tvCases.setText(AffectedCountries.countriesList.get(position).getCases());
         tvRecovered.setText(AffectedCountries.countriesList.get(position).getRecovered());
         tvCritical.setText(AffectedCountries.countriesList.get(position).getCritical());
         tvActive.setText(AffectedCountries.countriesList.get(position).getActive());
