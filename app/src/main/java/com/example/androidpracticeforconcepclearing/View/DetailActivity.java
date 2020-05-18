@@ -3,8 +3,11 @@ package com.example.androidpracticeforconcepclearing.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -14,8 +17,8 @@ import com.leo.simplearcloader.SimpleArcLoader;
 public class DetailActivity extends AppCompatActivity {
     TextView tvCases, tvRecovered, tvCritical, tvActive, tvTotalDeaths, tvTodayCases, tvTodayDeaths, tvAffectedCountries;
     int position;
-    ScrollView scrollStats;
-    SimpleArcLoader simpleArcLoader;
+
+    TextView tvStates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,16 @@ public class DetailActivity extends AppCompatActivity {
         tvTodayCases = findViewById(R.id.tvTodayCases);
         tvTodayDeaths = findViewById(R.id.tvTodayDeaths);
 
-//        scrollStats = findViewById(R.id.scrollStats);
-//        simpleArcLoader = findViewById(R.id.simpleArcLoader);
+        tvStates = findViewById(R.id.tvStates);
+        tvStates.setPaintFlags(tvStates.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        tvStates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stateList = new Intent(DetailActivity.this, StateList.class);
+                startActivity(stateList);
+
+            }
+        });
 
 
         tvCases.setText(AffectedCountries.countriesList.get(position).getCases());

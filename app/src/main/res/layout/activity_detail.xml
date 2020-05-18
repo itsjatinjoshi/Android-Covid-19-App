@@ -306,6 +306,17 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginTop="5dp"/>
 
+          <TextView
+              android:id="@+id/tvStates"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_marginTop="20dp"
+              android:layout_marginRight="10dp"
+              android:text="Click Here to see details according to states."
+              android:textColor="@color/colorPrimary"
+              android:textSize="18sp" />
+
       </LinearLayout>
     </RelativeLayout>
 
